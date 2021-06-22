@@ -13,7 +13,7 @@ public class HealthController {
     @GetMapping(value = "healthCheck/getServiceStatus")
     public Integer getServiceStatus(){
         Integer result = 0;
-        if (LocalDateTime.now().getSecond() * 2 == 0){
+        if (LocalDateTime.now().getSecond() % 2 == 0){
             result = 1;
         }else {
             result = 0;
