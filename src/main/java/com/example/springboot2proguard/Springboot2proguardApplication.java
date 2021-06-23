@@ -20,7 +20,8 @@ public class Springboot2proguardApplication {
 
     public static void main(String[] args) {
         SpringApplication springApplication =new SpringApplication(Springboot2proguardApplication.class);
-        springApplication.setBeanNameGenerator(new CustomGenerator());
+        // 某些网站声明可以这么解决部分配置的问题, 实测下来反而会造成部分包找不到
+//        springApplication.setBeanNameGenerator(new CustomGenerator());
         springApplication.run(args);
     }
 
