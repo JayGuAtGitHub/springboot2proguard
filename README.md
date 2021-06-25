@@ -1,5 +1,6 @@
 # springboot2proguard
 
+# 简介
 maybe the fastest out-of-the-box demo for project with tech stack of proguard + spring boot 2 + log4j2/log4j + mybatis plus with lambda and xml
 
 可能是最全的开箱即用的proguard配置方式, 如果你的项目里面使用了
@@ -13,7 +14,7 @@ undertow
 spring security
 feign
 
-主要配置方式
+# 主要配置方式
 1. pom的build中
 增加proguard-maven-plugin节点, 使用proguard7.x版本, 这个版本可以良好的兼容jdk9+, 采用4.x/5.x/6.x, 均会导致log组件无法加密
 原有的spring-boot-maven-plugin节点, 增加repackage
@@ -22,7 +23,7 @@ feign
 配置文件需要声明在pom里面, 位于节点
 <proguardInclude>${project.basedir}/proguard.cfg</proguardInclude>
 
-
+# 重要配置项解释
 其中比较重要的开启的配置如下(其他比如target, dontshrink等公开资料较多, 在此不再赘述):
 
 ##mybatis plus可以通过声明接口动态创建类, 忽略所有接口可以解决部分bean无法动态创建的问题, 但是在本项目中, 使用XML的方式, 只忽略interface不够, 采用下面的方式
