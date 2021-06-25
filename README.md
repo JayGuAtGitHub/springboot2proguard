@@ -28,7 +28,7 @@ feign
 ##mybatis plus可以通过声明接口动态创建类, 忽略所有接口可以解决部分bean无法动态创建的问题, 但是在本项目中, 使用XML的方式, 只忽略interface不够, 采用下面的方式
 ##比较好的方式是参照  https://blog.csdn.net/weixin_39886238/article/details/114600811  进行目录的组织, 可见目录组织有多重要
 ##注意, 这一项仅在不适用xml模式下有效
-# -keep interface springboot2proguard.** { *; }
+##-keep interface springboot2proguard.** { *; }
 
 ##keep相关用法参照https://www.jianshu.com/p/b471db6a01af
 ##保留所有class名称(和member), 兼容mybatis plus, 如果没用mybatis+XML的话不推荐开启这个选项, 或者使用上面的方式, 这个方式会极大降低混淆力度, 不开这个很难读懂代码
